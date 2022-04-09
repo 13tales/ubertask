@@ -47,8 +47,8 @@ export const className = `
   background-position: 50% 20px;
   -webkit-backdrop-filter: blur(20px);
   color: #2B2D42;
-  font-family: "Overpass Mono";
-  font-weight: 400;
+  font-family: "Overpass";
+  font-weight: 500;
   text-align: left;
   line-height: 1.5;
   border-radius: 10px;
@@ -72,7 +72,6 @@ export const className = `
     position: relative;
     justify-content: space-between;
     align-items: center;
-    font-weight: 500;
     padding: 10px 10px 10px 43px;
     z-index: 1;
 
@@ -100,6 +99,7 @@ export const className = `
     align-items: center;
     flex-grow: 1;
     flex-shrink: 1;
+    font-size: 10px;
   }
 
   .task-description {
@@ -145,7 +145,7 @@ const TaskRow = ({ task: { description, entry, due } }) => {
   const dateAdded = entry ? parseTaskWarriorDate(entry) : "";
   const dateDue = due ? parseTaskWarriorDate(due) : "";
   const taskDescription = _.truncate(description, {
-    length: 42,
+    length: 60,
     separator: /\s+/,
     omission: "… ",
   });
